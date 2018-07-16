@@ -1,1 +1,3 @@
 hdfs dfs -ls /
+https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html
+
