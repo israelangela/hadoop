@@ -1,0 +1,16 @@
+ hdfs dfs -ls /data/dataspain/company=isra |awk '{print $8;}'
+ 
+  hdfs dfs -ls /data/dataspain/company=isra |awk '{system("mkdir "/copia/copia2/$8"");}'
+  
+  
+ 
+  
+   hdfs dfs -ls /data/dataspain/company=isra |awk '{print $8;}'
+  
+  quitamos el year=2017
+   hdfs dfs -ls /data/dataspain/company=isra/*|grep 2017 |awk '{print substr($8,0,length($8)-10);}'
+   
+  Para crear los directorios y copiar
+  
+  hdfs dfs -ls /data/dataspain/company=isra/* |grep 2017 |awk '{system("mkdir -p /copia/copia3"$8"");system("hdfs dfs -get "$8" /copia/copia3"substr($8,0,length($8)-10)"")}' &
+  
