@@ -14,3 +14,6 @@
   
   hdfs dfs -ls /data/dataspain/company=isra/* |grep 2017 |awk '{system("mkdir -p /copia/copia3"$8"");system("hdfs dfs -get "$8" /copia/copia3"substr($8,0,length($8)-10)"")}' &
   
+  para medir tamaños
+  hdfs dfs -du /data/dataspain/company=isra/*|grep 2017 |head -n 4 |awk '{sum += $1} END {print sum/1024/1024}'
+  
