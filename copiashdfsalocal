@@ -17,3 +17,9 @@
   para medir tamaños
   hdfs dfs -du /data/dataspain/company=isra/*|grep 2017 |head -n 4 |awk '{sum += $1} END {print sum/1024/1024}'
   hdfs dfs -du /data/dataspain/company=isra/*|grep 2017 |awk '{sum += $1; print $1/1024/1024/1024" GB "$2} END {print sum/1024/1024/1024/1024 " TB"}'
+
+CAMBIAR FACTOR DE REPLICACION DIRECTORIO:
+
+hdfs dfs -setrep -R 2 /user/hdfs/test
+
+
